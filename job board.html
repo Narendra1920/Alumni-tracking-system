@@ -1,0 +1,182 @@
+<?php
+$insert=false;
+
+$server="localhost";
+$username="root";
+$con= mysqli_connect($server,$username);
+
+if(!$con){
+    die("connection failed due to". mysqli_connect_error());
+}
+$gd =$_POST['gd'];
+$wt =$_POST['wt'];
+$ht=$_POST['ht'];
+$ag =$_POST['ag'];
+$bp =$_POST['bp'];
+$bg =$_POST['bg'];
+$ol=$_POST['ol'];
+
+
+$sql =  "INSERT INTO `form`.`form` (`gd`, `wt`, `ht`, `ag`, `bp`, `bg`, `ol`) VALUES ('$gd', '$wt','$ht', '$ag', '$bp','$bg','$ol');";
+
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>job board</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<link rel="icon" href="logo.jpeg" type="image/icon type">
+<body class="w3-light-grey">
+
+
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>JOB BOARD</b></h1>
+  <p> <span class="w3-tag">Post the Job  for your juniors</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="job.jpg" alt="job" style="width:100%; height: 300px;">
+    <div class="w3-container">
+      <h3><b>Why post Job</b></h3>
+      <h5>description, <span class="w3-opacity"></span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>
+        you can access a pool of qualified candidates who are familiar with the college's culture and values.<br>
+        Posting job listings on a college's website can create mutually beneficial relationships between alumni, students, and the college.<br>
+        The college's website can become a hub for job postings and career resources, which can increase the visibility and reputation of the college.
+      </p>
+      <div class="w3-row">
+        
+        <div class="w3-col m4 w3-hide-small">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="office.jpg" alt="Norway" style="width:100%; height: 300px;">
+    <div class="w3-container">
+      <h3><b>JOB ENTRY</b> </h3>
+      
+    </div>
+
+    <div class="w3-container">
+     
+        <h2>Enter the following information </h2>
+<br>
+<form name ="form" action="job board.php" method="post">
+<input type="text" placeholder="Enter Company Name" id="gd" name="gd"><br><br>
+<input type="text" placeholder="No of Vacancy" id="wt" name="wt"><br><br>
+<input type="text" placeholder="Post name" id="ht" name="ht"><br><br>
+<input type="text" placeholder="Age limit" id="ag" name="ag"><br><br>
+<input type="text" placeholder="Qualification Required" id="bp" name="bp"><br><br>
+<input type="text" placeholder="Are in working in company" id="bg" name="bg"><br><br>
+<input type="text" placeholder="Your Post" id="ol" name="ol"><br><br>
+<input type="submit" value="submit" id="submit">
+</form>
+      
+
+
+
+
+
+
+      <div class="w3-row">
+       
+        
+      </div>
+    </div>
+  </div>
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="imgg.jpg" style="width:100% ">
+    <div class="w3-container w3-white">
+      <h4><b> From College desk</b></h4>
+      <p>We consider our alumni to be our assets and ambassadors and we are constantly exploring new ways of engaging with alumni across the world. The trend of alumni giving back to the alma mater has seen a rise in the last few years, and this is largely on account of a vibrant and engaged alumni network, </p>
+    </div>
+  </div><hr>
+  
+  <!-- Posts -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Other pages</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img src="as.webp" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Re-union</span><br>
+        
+      </li>
+      <li class="w3-padding-16">
+        <img src="logo.jpeg"Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Home-coming</span><br>
+      
+      </li> 
+      <li class="w3-padding-16">
+        <img src="imgg.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Networking</span><br>
+        <
+     
+    </ul>
+  </div>
+  <hr> 
+ 
+  <!-- Labels / tags -->
+  
+  
+
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom" onclick="fun1()">Previous</button>
+  <button class="w3-button w3-black w3-padding-large w3-margin-bottom" onclick="fun2()">Next »</button>
+  <p>Copyright@ <a href="" target="_blank">MMMUT</a></p>
+</footer>
+<script>
+function fun1()
+   {
+    location.replace("jio.html");
+   }
+   function fun2()
+   {
+    location.replace("#");
+   }
+
+</script>
+</body>
+
+</html>
