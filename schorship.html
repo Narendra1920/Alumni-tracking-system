@@ -1,0 +1,214 @@
+<?php
+$insert=false;
+
+$server="localhost";
+$username="root";
+$con= mysqli_connect($server,$username);
+
+if(!$con){
+    die("connection failed due to". mysqli_connect_error());
+}
+$gd =$_POST['gd'];
+$wt =$_POST['wt'];
+$ht=$_POST['ht'];
+$ag =$_POST['ag'];
+$bp =$_POST['bp'];
+
+
+
+$sql =  "INSERT INTO `m`.`m` (`gd`, `wt`, `ht`, `ag`, `bp`) VALUES ('$gd', '$wt','$ht', '$ag', '$bp');";
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>schorship</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
+
+<div class="w3-bar w3-white w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-red w3-mobile">Form</a>
+  <a href="#Creteria" class="w3-bar-item w3-button w3-mobile">Creteria</a>
+  <a href="#about" class="w3-bar-item w3-button w3-mobile">About</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
+  
+</div>
+<!-- Header -->
+<header class="w3-display-container w3-content" style="max-width:1500px;">
+  <img class="w3-image" src="schorship.webp" alt="The Hotel" style="min-width:1000px" width="1500" height="800">
+  <div class="w3-display-left w3-padding w3-col l6 m8">
+    <div class="w3-container w3-red">
+      <h2>Relative form</h2>
+    </div>
+    <div class="w3-container w3-white w3-padding-16">
+      <form action="schorship.php"  method="post">
+        <input type="text" placeholder="Relation to you" id="gd" name="gd"><br><br>
+<input type="text" placeholder="Name of candidate" id="wt" name="wt"><br><br>
+<input type="text" placeholder="Your Batch year" id="ht" name="ht"><br><br>
+<input type="text" placeholder="Name of course" id="ag" name="ag"><br><br>
+<input type="text" placeholder="branch" id="bp" name="bp"><br><br>
+
+<input type="submit" value="submit" id="submit">
+      </form>
+    </div>
+  </div>
+</header>
+<div id="Creteria">
+<h1>Different Creteria of Schorship</h1>
+<div class="w3-content" style="max-width:1532px;">
+
+  
+  
+
+  <div class="w3-row-padding w3-padding-16">
+    <div class="w3-third w3-margin-bottom">
+      <img src="gm.jpg" alt="Norway" style="width:100%; height: 250px;">
+      <div class="w3-container w3-white">
+        <h3>50% schorship</h3>
+        <h1> if You are</h1>
+        <h3>
+            Board of directors<br>
+Chief finance officer<br>
+Chief executive officer<br>
+General manager<br>
+Regional general manager<br>
+Assistant to general manager<br>
+ Assistant to regional general manager<br><br>
+Vice president<br>
+Senior HR manager<br>
+Regional training manager<br>
+Assistant to regional training manager<br>
+        </h3>
+        
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="sm.jpg" alt="Norway" style="width:100%; height:250px">
+      <div class="w3-container w3-white">
+        <h3>40% Schorship</h3>
+        <h1> if You are</h1>
+        <h3>
+            Senior manager<br>
+Block development manager<br>
+Regional sales manager<br>
+Sales manager<br>
+Marketing manager<br>
+Assistant marketing manager<br>
+Assistant sales manager<br>
+Finance manager<br>
+Assistant finance manager<br>
+Regional finance manager<br>
+Account manager<br>
+Resource manager<br>
+Trainer<br>
+Recruiter<br>
+Assistant HR manager<br>
+        </h3>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="fff.jpg" alt="Norway" style="width:100%;height: 250px;">
+      <div class="w3-container w3-white">
+        <h3>30% Schorship</h3>
+        <h1> if You are</h1>
+        <h3>
+            Sales executive<br>
+            Senior engineer<br>
+            Junior engineer<br>
+            Project head<br>
+            Software developer<br>
+            Area advisor<br>
+            Executive engineer<br>
+            Web designer<br>
+            Web developer<br>
+            Senior analyst<br>
+            Quality analyst<br>
+            Trainee<br>
+            Network administrator<br>
+            System administrator<br>
+            Customer service executive<br>
+            
+        </h3>
+      </div>
+    </div>
+  </div></div>
+  <div class="w3-row-padding" id="about">
+    <div class="w3-col l4 12">
+      <h3>About</h3>
+      <h6>Madan-mohan-malaviya-university-of-technology-mmmec-gorakhpur Provide the schorsip to those have following relation from the alumni 
+        <h3>Brother<br>Sister<br>Son<br>Daughter<br>Parents</h3> </h6>
+      <h2 style="color: red;"> Applicable Only if Alumni Fill the form through this portal </h2>
+    </div>
+    <div class="w3-col l8 12">
+      <!-- Image of location/map -->
+      <img src="as.webp" class="w3-image w3-greyscale" style="width:100%;">
+    </div>
+  </div>
+  
+  
+  <div class="w3-panel w3-red w3-leftbar w3-padding-32" style="margin-top: 40px ;">
+    <h6><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i> On demand, we can offer schorship to  Cousins, Friends.</h6>
+  </div>
+
+  
+      </div>
+    </div>
+  </div>
+
+  
+
+  <div class="w3-container" id="contact">
+    <h2>Contact</h2>
+    <p>If you have any questions, do not hesitate to ask them.</p>
+    <i class="fa fa-map-marker w3-text-red" style="width:30px"></i> MMMUT, Gorarkhpur<br>
+    <i class="fa fa-phone w3-text-red" style="width:30px"></i> Phone: +00 151515<br>
+    <i class="fa fa-envelope w3-text-red" style="width:30px"> </i> Email: mail@mail.com<br>
+    
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-padding-32 w3-black w3-center w3-margin-top">
+  <h5>Find Us On</h5>
+  <div class="w3-xlarge w3-padding-16">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Copyright@2023 <a  target="_blank" class="w3-hover-text-green">MMMUT</a></p>
+</footer>
+
+
+
+</body>
+</html>
