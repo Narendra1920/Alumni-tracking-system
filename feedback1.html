@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>idea</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('feedback.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+</head>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    MMMUT
+  </div>
+  <div class="w3-display-middle">
+    <h1>Plz give some suggestions or ideas to your own college</h1>
+    <form  method="post">
+        <div>
+            <a href="#" id="start_button" onclick="startDictation(event)">I don't want to type too much.</a>
+            <div id="results">
+                <span id="final_span" class="final"></span>
+                <span id="interim_span" class="interim"></span>
+               <br><br> <button style="background-color: red; color: aliceblue; border: 2px solid white; border-radius: 7%; margin-top: 20px; padding: 10px 20px 10px 20px;">Submit</button>
+              </div>
+          </div>
+          
+          <h3>I want Typing</h3>
+        <textarea placeholder="Ideas" id="results" values="idea" name="idea"  cols="50" rows="10" style="padding: 40px 40px 40px 40px;">
+    </textarea>
+   <br> <button style="background-color: red; color: aliceblue; border: 2px solid white; border-radius: 7%; margin-top: 20px; padding: 10px 20px 10px 20px;">Submit</button>
+    
+    </form>
+  </div>
+  <div class="w3-display-bottomleft w3-padding-large">
+    copywrite@2023 MMMUTS
+  </div>
+</div><script type="text/javascript">
+	var final_transcript = '';
+	var recognizing = false;
+  
+	if ('webkitSpeechRecognition' in window) {
+	  var recognition = new webkitSpeechRecognition();
+  
+	  recognition.continuous = true;
+	  recognition.interimResults = true;
+  
+	  recognition.onstart = function () {
+		recognizing = true;
+	  };
+  
+	  recognition.onerror = function (event) {
+		console.log(event.error);
+	  };
+  
+	  recognition.onend = function () {
+		recognizing = false;
+	  };
+  
+	  recognition.onresult = function (event) {
+		var interim_transcript = '';
+		for (var i = event.resultIndex; i < event.results.length; ++i) {
+		  if (event.results[i].isFinal) {
+			final_transcript += event.results[i][0].transcript;
+		  } else {
+			interim_transcript += event.results[i][0].transcript;
+		  }
+		}
+		final_transcript = capitalize(final_transcript);
+		final_span.innerHTML = linebreak(final_transcript);
+		interim_span.innerHTML = linebreak(interim_transcript);
+	  };
+	}
+  
+	var two_line = /\n\n/g;
+	var one_line = /\n/g;
+	function linebreak(s) {
+	  return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
+	}
+  
+	function capitalize(s) {
+	  return s.replace(s.substr(0, 1), function (m) {
+		return m.toUpperCase();
+	  });
+	}
+  
+	function startDictation(event) {
+	  if (recognizing) {
+		recognition.stop();
+		return;
+	  }
+	  final_transcript = '';
+	  recognition.lang = 'en-US';
+	  recognition.start();
+	  final_span.innerHTML = '';
+	  interim_span.innerHTML = '';
+	}
+  </script>
+</body>
+</html>
